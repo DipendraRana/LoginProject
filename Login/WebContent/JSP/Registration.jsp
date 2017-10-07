@@ -17,7 +17,7 @@
 				</tr>
 				<tr>
 				<td>Email-id</td>
-				<td><input type="text" name="emailid"></td>
+				<td><input type="text" name="emailId"></td>
 				</tr>
 				<tr>
 				<td>Password</td>
@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 				<td>Mobile Number</td>
-				<td><input type="text" name="mobilenumber"></td>
+				<td><input type="text" name="mobileNumber"></td>
 				</tr>
 				<tr>
 				<td><input type="submit" value="Register"></td>
