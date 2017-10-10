@@ -29,24 +29,26 @@ public class LoginDao {
 	 * @param password its data type is String
 	 * @return returns True if found else returns False
 	 */
-	public static boolean validate(String username,String password) {
+	public static String validate(String emailId,String password) {
 		// TODO Auto-generated method stub
 		Connection connection=null;
 		PreparedStatement statement=null;
 		ResultSet resultSet=null;
-		boolean status = false;
+		String userName=null;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/form","root","root");
-			statement=connection.prepareStatement("Select * from login where user=? and password=?");
-			statement.setString(1, username);
+			statement=connection.prepareStatement("Select * from login where emailid=? and password=?");
+			statement.setString(1, emailId);
 			statement.setString(2, password);
 			resultSet=statement.executeQuery();
-			status=resultSet.next();
+			resultSet.next();
+			userName=resultSet.getString(1);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Some Error has Occurred While Connecting to Database");
+			e.printStackTrace();
+			//System.out.println("Some Error has Occurred While Connecting to Database");
 		}finally {
 			if(connection!=null) {
 				try {
@@ -73,7 +75,7 @@ public class LoginDao {
 				}
 			}
 		}
-		return status;
+		return userName;
 	}
 
 }

@@ -5,9 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registration Form</title>
+<script type="text/javascript" src="/Login/JS/RegistrationFormValidator.js"></script>
 </head>
 <body>
-	<form action="">
+	<form action="/Login/RegisterDao" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
 		<fieldset style="width:500px" >
 		<legend>Registration Form</legend>
 			<table>

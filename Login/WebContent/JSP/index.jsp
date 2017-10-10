@@ -5,23 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login Page</title>
+<script type="text/javascript" src="JS/LoginFormValidator.js"></script>
 </head>
 <body>
-<form action="/Login/LoginServlet" method="post">
+<form action="/Login/SwitchingClass" method="post" name="loginform" >
 <fieldset style="width:300px">
 <legend>Login</legend>
 <table>
 <tr>
-<td>User ID</td>
-<td><input type="text" name="username" required></td>
+<td>Email-ID</td>
+<td><input type="text" name="emailId"></td>
 </tr>
 <tr>
 <td>Password</td>
-<td><input type="password" name="password" required></td>
+<td><input type="password" name="password"></td>
 </tr>
 <tr>
-<td><input type="submit" value="Register"></td>
-<td><input type="submit" value="Login"></td>
+<td><input type="submit" value="Login" name="action" onclick="return validateTheLoginForm()"></td>
+<td><input type="submit" value="Register" name="action"></td>
 </tr>
 </table>
 </fieldset>

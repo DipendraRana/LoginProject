@@ -4,19 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome <%= session.getAttribute("name") %></title>
+<title>Insert title here</title>
+<script type="text/javascript">
+var car={name:"Ritz",maker:"maruti"};
+for(var carProperty in car){
+	document.write(carProperty+":"+car[carProperty]+"<br/>");
+}
+</script>
 </head>
 <body>
-<table width="1500">
-<tr>
-<td>Home Page</td>
-<td>User:<%= session.getAttribute("name") %></td>
-<td>
-<form action="JSP/index.jsp">
-<input type="submit" value="Logout" align="right">
-</form>
-</td>
-</tr>
-</table>
+
 </body>
 </html>
