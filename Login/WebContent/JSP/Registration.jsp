@@ -6,33 +6,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registration Form</title>
 <script type="text/javascript" src="/Login/JS/RegistrationFormValidator.js"></script>
+<link rel="stylesheet" type="text/css" href="/Login/CSS/RegistrationForm.css">
 </head>
 <body>
-	<form action="/Login/RegisterDao" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
-		<fieldset style="width:500px" >
-		<legend>Registration Form</legend>
-			<table>
-				<tr>
-				<td>Name</td>
-				<td><input type="text" name="name"></td>
-				</tr>
-				<tr>
-				<td>Email-id</td>
-				<td><input type="text" name="emailId"></td>
-				</tr>
-				<tr>
-				<td>Password</td>
-				<td><input type="password" name="password"></td>
-				</tr>
-				<tr>
-				<td>Mobile Number</td>
-				<td><input type="text" name="mobileNumber"></td>
-				</tr>
-				<tr>
-				<td><input type="submit" value="Register"></td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
+<form action="/Login/RegisterDao" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
+<div class="form">
+<div class="registration"><h1>Registration Form</h1></div>
+<label for="name">Name</label>
+<input type="text" name="name" class="name">
+<label for="emailId">Email-id</label>
+<input type="text" name="emailId" class="emailId">
+<label for="password">Password</label>
+<input type="password" name="password" class="password">
+<label for="mobileNumber">Mobile Number</label>
+<input type="text" name="mobileNumber" class="mobileNumber">
+<input type="submit" value="Register">
+</div>
+</form>
 </body>
 </html>
