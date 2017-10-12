@@ -5,7 +5,8 @@ function validateTheRegistrationForm(){
 	var mobileNumber=document.registrationform.mobileNumber.value;
 	var atTheRatePosition=emailId.indexOf("@");
 	var lastDotPosition=emailId.lastIndexOf(".");
-	if(userName==null||userName==""||!isNaN(userName)){
+	var regularExpression="[A-Za-z]{1,}";
+	if(userName==null||userName==""||!regularExpression.match(userName)){
 		alert("User ID can't be blank and not a number");
 		return false;
 	}
@@ -17,7 +18,7 @@ function validateTheRegistrationForm(){
 		alert("Password length must be greater than 5");
 		return false
 	}
-	else if(mobileNumber.length<10 || isNaN(mobileNumber)){
+	else if(mobileNumber.length!=10 && !isNaN(mobileNumber)){
 		alert("Mobile Number Should be of 10 digits and should not contain alphabets");
 		return false
 	}

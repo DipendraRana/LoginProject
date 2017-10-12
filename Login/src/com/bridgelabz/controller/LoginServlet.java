@@ -45,12 +45,13 @@ public class LoginServlet extends HttpServlet {
 		if(session!=null)
 			session.setAttribute("name", userName);
 		if(userName!=null) {
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("JSP/welcome.jsp");
-			requestDispatch.forward(request, response);
+			//RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/welcome.jsp");
+			//requestDispatch.forward(request, response);
+			response.sendRedirect("/Login/JSP/welcome.jsp");
 		}
 		else {
 			out.print("<p style=\"clour:red\">Invalid emailId or password</p>");
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("JSP/index.jsp");
+			RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/index.jsp");
 			requestDispatch.include(request, response);
 		}
 		out.close();
