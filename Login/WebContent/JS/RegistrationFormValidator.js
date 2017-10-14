@@ -1,25 +1,25 @@
 function validateTheRegistrationForm(){
 	var userName=document.registrationform.name.value;
+	var userName=userName.replace(/ /g,'');
 	var emailId=document.registrationform.emailId.value;
 	var password=document.registrationform.password.value;
 	var mobileNumber=document.registrationform.mobileNumber.value;
-	var atTheRatePosition=emailId.indexOf("@");
-	var lastDotPosition=emailId.lastIndexOf(".");
-	var regularExpression="[A-Za-z]{1,}";
-	if(userName==null||userName==""||!regularExpression.match(userName)){
-		alert("User ID can't be blank and not a number");
+	var regularExpressionForUserName=/[^A-Za-z]{1,}/;
+	var regularExpressionForEmailId=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+	if(userName==""||regularExpressionForUserName.test(userName)){
+		alert("User name not valid");
 		return false;
 	}
-	else if(atTheRatePosition<1 || atTheRatePosition>emailId.length || atTheRatePosition+2>lastDotPosition || lastDotPosition+2>=emailId.length){
+	else if(!regularExpressionForEmailId.test(emailId)||emailId==""){
 		alert("Please enter valid e-mail ID");
-		return false
+		return false;
 	}
-	else if(password.length<=5){
+	else if(password.length<5||password==""){
 		alert("Password length must be greater than 5");
-		return false
+		return false;
 	}
-	else if(mobileNumber.length!=10 && !isNaN(mobileNumber)){
-		alert("Mobile Number Should be of 10 digits and should not contain alphabets");
-		return false
+	else if(mobileNumber.length !=10 || isNaN(mobileNumber) || mobileNumber==""){
+		alert("Mobile Number not valid");
+		return false;
 	}
 }

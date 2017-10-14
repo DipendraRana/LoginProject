@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,6 @@ import com.bridgelabz.dao.LoginDao;
  * @author Dipendra Rana
  * @since 6 Oct 2017
  */
-@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,25 +31,26 @@ public class LoginServlet extends HttpServlet {
 	 * Note: error message and index.jsp page is include in one LoginServlet class by using include method. 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	doPost(request,response);
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		String emailId=request.getParameter("emailId");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession(false); //returns session object if exists else returns null. Note the significance of boolean value 
 		String userName=LoginDao.validate(emailId, password);
-		
 		if(session!=null)
 			session.setAttribute("name", userName);
-		if(userName!=null) {
-			//RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/welcome.jsp");
-			//requestDispatch.forward(request, response);
-			response.sendRedirect("/Login/JSP/welcome.jsp");
-		}
+		if(userName!=null)
+			response.sendRedirect("/Login/JSP/welcome");
 		else {
-			out.print("<p style=\"clour:red\">Invalid emailId or password</p>");
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/index.jsp");
+			out.print("<p>Invalid emailId or password</p>");
+			RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/index");
 			requestDispatch.include(request, response);
 		}
 		out.close();

@@ -1,27 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registration Form</title>
 <script type="text/javascript" src="/Login/JS/RegistrationFormValidator.js"></script>
 <link rel="stylesheet" type="text/css" href="/Login/CSS/RegistrationForm.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action="/Login/RegisterDao" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
+<div class="row">
+<div class="col-xs-12">
 <div class="form">
+<form action="/Login/RegisterDao" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
+<div class="row">
+<div class="col-xs-12">
 <div class="registration"><h1>Registration Form</h1></div>
-<label for="name">Name</label>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-9">
+<div class="name"><label for="name">Name</label></div>
 <input type="text" name="name" class="name">
-<label for="emailId">Email-id</label>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-9">
+<div class="emailId"><label for="emailId">Email-id</label></div>
 <input type="text" name="emailId" class="emailId">
-<label for="password">Password</label>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-9">
+<div class="password"><label for="password">Password</label></div>
 <input type="password" name="password" class="password">
-<label for="mobileNumber">Mobile Number</label>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-9">
+<div class="mobileNumber"><label for="mobileNumber">Mobile Number</label></div>
 <input type="text" name="mobileNumber" class="mobileNumber">
+</div>
+</div>
+<div class="row">
+<div class="col-xs-4">
 <input type="submit" value="Register">
 </div>
+</div>
 </form>
+</div>
+</div>
+</div>
 </body>
 </html>

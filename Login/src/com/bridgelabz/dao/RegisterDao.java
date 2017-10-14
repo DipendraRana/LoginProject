@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,6 @@ import com.bridgelabz.model.AttributesFile;
 /**
  * Servlet implementation class RegisterServlet
  */
-@WebServlet("/RegisterDao")
 public class RegisterDao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -33,7 +31,7 @@ public class RegisterDao extends HttpServlet {
 		attributesFile.setPassword(request.getParameter("password"));
 		attributesFile.setMobileNo(Long.parseLong(request.getParameter("mobileNumber")));
 		databaseConnection();
-		response.sendRedirect("JSP/index.jsp");
+		response.sendRedirect("JSP/index");
 	}
 	
 	protected void insertElementInDatabase(PreparedStatement statement) {

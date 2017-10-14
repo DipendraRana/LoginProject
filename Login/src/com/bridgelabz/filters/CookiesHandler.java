@@ -6,7 +6,6 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class CookiesHandler
  */
-@WebFilter("/Login/JSP/welcome.jsp")
 public class CookiesHandler implements Filter {
 
 	/**
@@ -25,14 +23,13 @@ public class CookiesHandler implements Filter {
 		HttpServletResponse httpResponse=(HttpServletResponse) response;
 		HttpServletRequest httpRequest=(HttpServletRequest) request;
 		HttpSession session=httpRequest.getSession();
-		System.out.println("name"+session.getAttribute("name"));
 		if(session.getAttribute("name")==null)
-			httpResponse.sendRedirect("/Login/JSP/index.jsp");
+			httpResponse.sendRedirect("/Login/JSP/index");
 		else {
 			httpResponse.setHeader("Pragma","no-cache");	//provides backward compatibility for HTTP 1.0
 			httpResponse.setHeader("Cache-Control","no-store,no-cache,must-revalidate,private");	// provided in HTTP 1.1
 			httpResponse.setDateHeader("Expires", 0);
-			httpResponse.sendRedirect("/Login/JSP/welcome.jsp");
+			
 		}
 		// pass the request along the filter chain
 		chain.doFilter(request, response);

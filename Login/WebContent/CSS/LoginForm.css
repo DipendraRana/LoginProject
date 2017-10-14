@@ -1,14 +1,14 @@
 input[type=text],input[type=password]{
-	width: 300px;
-	padding: 5px 5px;
-	margin: 10px 0px;
+	margin-bottom:10px;
+	margin-left:10px;
+	width:80%;
 	border: 5px;
 	border-radius: 4px;
 }
 input[type=submit] {
-	width: 152px;
+	max-width: 152px;
 	padding: 10px 20px;
-	margin: 40px 0px;
+	margin: 10px 10px;
 	border: 3px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -23,18 +23,23 @@ h1{
 div.outer {
 	border-radius: 5px;
 	background-color: #a6a6a6;
-	width: 310px;
+	max-width: 310px;
 	border: 100px white;
-	padding: 10px 30px;
-	margin: 150px 450px;
-	height: 300px
+	margin-left: auto;
+    margin-right: auto;
+	margin-top:10%;
+	max-height: 350px
 }
 div.inner {
 	background-color: #99ddff;
 }
 div.emailId {
-	height: 20px
+	max-height: 20px;
+	margin-left: 10px;
+	margin-bottom:5px;
 }
 div.password {
-	height: 20px
+	max-height: 20px;
+	margin-left: 10px;
+	margin-bottom:5px;
 }
