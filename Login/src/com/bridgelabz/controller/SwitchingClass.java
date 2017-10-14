@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Purpose: Receives the actions from index.jsp and accordingly calls the appropriate servlet
@@ -21,10 +22,13 @@ public class SwitchingClass extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
 		if(request.getParameter("action").equals("Register")) { 
 			response.sendRedirect("/Login/JSP/Registration");
 		}	
 		else {
+			session.setAttribute("error-flag", "0");
+			System.out.println("Switching class");
 			RequestDispatcher requestDispatch=request.getRequestDispatcher("/LoginServlet");
 			requestDispatch.forward(request, response);	
 		}	

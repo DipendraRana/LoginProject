@@ -2,7 +2,6 @@ package com.bridgelabz.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,15 +43,17 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession(false); //returns session object if exists else returns null. Note the significance of boolean value 
 		String userName=LoginDao.validate(emailId, password);
+		System.out.println("i'm here Login Servlet");
 		if(session!=null)
 			session.setAttribute("name", userName);
-		if(userName!=null)
+		if(userName!=null) {
+			session.removeAttribute("error-flag");
 			response.sendRedirect("/Login/JSP/welcome");
-		else {
-			out.print("<p>Invalid emailId or password</p>");
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("/JSP/index");
-			requestDispatch.include(request, response);
-		}
+		}	
+		else { 
+			session.removeAttribute("error-flag");
+			response.sendRedirect("/Login/JSP/index");
+		}	
 		out.close();
 	}
 

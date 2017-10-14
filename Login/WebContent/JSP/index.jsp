@@ -25,12 +25,24 @@
 <div class="col-xs-12">
 <div class="emailId"><label for="emailId">Email-ID</label></div>
 <input type="text" name="emailId" id="emailId">
+<% if(session.getAttribute("error-flag")!=null){
+		if(session.getAttribute("error-flag").equals("1")){
+			out.print("<br/>"+session.getAttribute("error")+"<br/>");
+		}
+	}
+%>
 </div>
 </div>
 <div class="row">
 <div class="col-xs-12">
 <div class="password"><label for="password">Password</label></div>
 <input type="password" name="password" id="password">
+<% if(session.getAttribute("error-flag")!=null){
+		if(session.getAttribute("error-flag").equals("2")){
+			out.print("<br/>"+session.getAttribute("error")+"<br/>");
+		}
+	}
+%>
 </div>
 </div>
 <div class="row">
