@@ -23,14 +23,13 @@ public class SwitchingClass extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session=request.getSession();
+		session.setAttribute("error-flag", "0");
 		if(request.getParameter("action").equals("Register")) { 
 			response.sendRedirect("/Login/JSP/Registration");
 		}	
 		else {
-			session.setAttribute("error-flag", "0");
-			System.out.println("Switching class");
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("/LoginServlet");
-			requestDispatch.forward(request, response);	
+			RequestDispatcher requestDispatch=request.getRequestDispatcher("/LoginValidationServlet");
+			requestDispatch.forward(request, response);
 		}	
 	}
 

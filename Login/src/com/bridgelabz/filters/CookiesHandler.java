@@ -23,13 +23,13 @@ public class CookiesHandler implements Filter {
 		HttpServletResponse httpResponse=(HttpServletResponse) response;
 		HttpServletRequest httpRequest=(HttpServletRequest) request;
 		HttpSession session=httpRequest.getSession();
-		if(session.getAttribute("name")==null)
+		if(session.getAttribute("name")==null) {
 			httpResponse.sendRedirect("/Login/JSP/index");
+		}
 		else {
 			httpResponse.setHeader("Pragma","no-cache");	//provides backward compatibility for HTTP 1.0
 			httpResponse.setHeader("Cache-Control","no-store,no-cache,must-revalidate,private");	// provided in HTTP 1.1
 			httpResponse.setDateHeader("Expires", 0);
-			
 		}
 		// pass the request along the filter chain
 		chain.doFilter(request, response);

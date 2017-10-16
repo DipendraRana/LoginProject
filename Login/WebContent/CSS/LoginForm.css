@@ -43,3 +43,12 @@ div.password {
 	margin-left: 10px;
 	margin-bottom:5px;
 }
+div.message {
+	max-height: 20px;
+	margin-top: 1px;
+	margin-left: 10px;
+	margin-bottom:10px;
+}
+span {
+	margin-left: 10px;
+}

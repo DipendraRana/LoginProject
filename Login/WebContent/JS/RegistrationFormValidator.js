@@ -4,22 +4,26 @@ function validateTheRegistrationForm(){
 	var emailId=document.registrationform.emailId.value;
 	var password=document.registrationform.password.value;
 	var mobileNumber=document.registrationform.mobileNumber.value;
+	document.getElementById("name-ID").innerHTML="";
+	document.getElementById("emailId-ID").innerHTML="";
+	document.getElementById("password-ID").innerHTML="";
+	document.getElementById("mobileNumber-ID").innerHTML="";
 	var regularExpressionForUserName=/[^A-Za-z]{1,}/;
 	var regularExpressionForEmailId=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	if(userName==""||regularExpressionForUserName.test(userName)){
-		alert("User name not valid");
+		document.getElementById("name-ID").innerHTML="Invalid User Name";
 		return false;
 	}
 	else if(!regularExpressionForEmailId.test(emailId)||emailId==""){
-		alert("Please enter valid e-mail ID");
+		document.getElementById("emailId-ID").innerHTML="Invalid Email ID";
 		return false;
 	}
 	else if(password.length<5||password==""){
-		alert("Password length must be greater than 5");
+		document.getElementById("password-ID").innerHTML="Invalid Password";
 		return false;
 	}
 	else if(mobileNumber.length !=10 || isNaN(mobileNumber) || mobileNumber==""){
-		alert("Mobile Number not valid");
+		document.getElementById("mobileNumber-ID").innerHTML="Invalid Mobile Number";
 		return false;
 	}
 }

@@ -17,7 +17,7 @@ import com.bridgelabz.dao.LoginDao;
  */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	 
 	/**
 	 * User Name and Password are valuable and should be kept secret thats why we used doPost method for it
 	 * and in it we get username and password and use it to validate it by calling validate method of class LoginDao.
@@ -37,23 +37,18 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		HttpSession session=request.getSession(false); //returns session object if exists else returns null. Note the significance of boolean value 
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		String emailId=request.getParameter("emailId");
 		String password=request.getParameter("password");
-		HttpSession session=request.getSession(false); //returns session object if exists else returns null. Note the significance of boolean value 
 		String userName=LoginDao.validate(emailId, password);
-		System.out.println("i'm here Login Servlet");
 		if(session!=null)
 			session.setAttribute("name", userName);
-		if(userName!=null) {
-			session.removeAttribute("error-flag");
+		if(userName!=null)
 			response.sendRedirect("/Login/JSP/welcome");
-		}	
-		else { 
-			session.removeAttribute("error-flag");
+		else
 			response.sendRedirect("/Login/JSP/index");
-		}	
 		out.close();
 	}
 

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login Page</title>
-<script type="text/javascript" src="JS/LoginFormValidator.js"></script>
+<script type="text/javascript" src="/Login/JS/LoginFormValidator.js"></script>
 <link rel="stylesheet" type="text/css" href="/Login/CSS/LoginForm.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -25,24 +25,32 @@
 <div class="col-xs-12">
 <div class="emailId"><label for="emailId">Email-ID</label></div>
 <input type="text" name="emailId" id="emailId">
+<span id="emailId-ID" style="color:red"></span>
+<div class="message">
 <% if(session.getAttribute("error-flag")!=null){
 		if(session.getAttribute("error-flag").equals("1")){
-			out.print("<br/>"+session.getAttribute("error")+"<br/>");
+			out.print("<p style=\"color:red;\"><b>"+session.getAttribute("error")+"</b></p>");
+			session.removeAttribute("error-flag");
 		}
 	}
 %>
+</div>
 </div>
 </div>
 <div class="row">
 <div class="col-xs-12">
 <div class="password"><label for="password">Password</label></div>
 <input type="password" name="password" id="password">
+<span id="password-ID" style="color:red"></span>
+<div class="message">
 <% if(session.getAttribute("error-flag")!=null){
 		if(session.getAttribute("error-flag").equals("2")){
-			out.print("<br/>"+session.getAttribute("error")+"<br/>");
+			out.print("<p style=\"color:red;\"><b>"+session.getAttribute("error")+"</b></p>");
+			session.removeAttribute("error-flag");
 		}
 	}
 %>
+</div>
 </div>
 </div>
 <div class="row">
