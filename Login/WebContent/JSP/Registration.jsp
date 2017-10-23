@@ -17,7 +17,7 @@
 <div class="row">
 <div class="col-xs-12">
 <div class="form">
-<form action="/Login/RegistrationFormVaildator" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
+<form action="/Login/Registration" method="post" name="registrationform" onsubmit="return validateTheRegistrationForm()">
 <div class="row">
 <div class="col-xs-12">
 <div class="registration"><h1>Registration Form</h1></div>

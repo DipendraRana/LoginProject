@@ -4,14 +4,7 @@
   <welcome-file-list>
     <welcome-file>StartingServlet</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>LoginValidation</servlet-name>
-    <servlet-class>com.bridgelabz.filters.LoginValidationServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LoginValidation</servlet-name>
-    <url-pattern>/LoginValidationServlet</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <servlet-name>LoginFile</servlet-name>
     <jsp-file>/JSP/index.jsp</jsp-file>
@@ -77,12 +70,12 @@
     <url-pattern>/SwitchingClass</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-  <servlet-name>RegistrationValidator</servlet-name>
-  <servlet-class>com.bridgelabz.filters.RegistrationFormVaildator</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  <servlet-name>RegistrationValidator</servlet-name>
-  <url-pattern>/RegistrationFormVaildator</url-pattern>
-  </servlet-mapping>
+ <servlet>
+ <servlet-name>Registration</servlet-name>
+ <servlet-class>com.bridgelabz.controller.RegistrationServlet</servlet-class>
+ </servlet> 
+ <servlet-mapping>
+ <servlet-name>Registration</servlet-name>
+ <url-pattern>/Registration</url-pattern>
+ </servlet-mapping>
 </web-app>

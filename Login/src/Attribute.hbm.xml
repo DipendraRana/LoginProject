@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bridgelabz.model.AttributesFile" table="login">
+<id name="emailId" type="string" column="Email_Id"></id>
+<property name="userName" type="string" column="User_Name"></property>
+<property name="password" type="string" column="Password"></property>
+<property name="mobileNumber" type="long" column="Mobile_Number"></property>
+</class>
+</hibernate-mapping> 

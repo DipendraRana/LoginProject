@@ -28,7 +28,7 @@ public class SwitchingClass extends HttpServlet {
 			response.sendRedirect("/Login/JSP/Registration");
 		}	
 		else {
-			RequestDispatcher requestDispatch=request.getRequestDispatcher("/LoginValidationServlet");
+			RequestDispatcher requestDispatch=request.getRequestDispatcher("/LoginServlet");
 			requestDispatch.forward(request, response);
 		}	
 	}

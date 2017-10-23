@@ -19,7 +19,11 @@
 <div class="col-xs-4" style="background-color:#66c2ff">
 <div class="toptext">User:<%= session.getAttribute("name") %></div>
 </div>
-<div class="col-xs-4" style="background-color:#33adff"><form action="/Login/SessionController" method="post">
+<% if(session!=null) {
+	session.removeAttribute("name");
+	session.invalidate();
+} %>
+<div class="col-xs-4" style="background-color:#33adff"><form action="/Login/JSP/index" method="post">
 <input type="submit" value="Logout" align="right">
 </form>
 </div>

@@ -16,36 +16,35 @@ public class AttributesFile {
 		mobileNumber=0;
 		emailId=null;
 	}
+	public String getUserName() {
+		return userName;
+	}
 	
 	public void setUserName(String userName) {
 		this.userName=userName;
-	}
-	
-	public void setPassword(String password) {
-		this.password=password;
-	}
-	
-	public void setMobileNo(long mobileNumber) {
-		this.mobileNumber=mobileNumber;
-	}
-	
-	public void setEmailID(String emailId) {
-		this.emailId=emailId;
-	}
-	
-	public String getUserName() {
-		return userName;
 	}
 	
 	public String getPassword() {
 		return password;
 	}
 	
+	public void setPassword(String password) {
+		this.password=password;
+	}
+	
+	public String getEmailId() {
+		return emailId;
+	}
+	
+	public void setEmailId(String emailId) {
+		this.emailId=emailId;
+	}
+
 	public long getMobileNumber() {
 		return mobileNumber;
 	}
 	
-	public String getEmailID() {
-		return emailId;
+	public void setMobileNumber(long mobileNumber) {
+		this.mobileNumber=mobileNumber;
 	}
 }
